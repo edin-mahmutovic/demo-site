@@ -21,3 +21,10 @@ jobs:
 
     - name: Build site
       run: npm run build
+      env:
+        API_KEY_GHOST: ${{ secrets.API_KEY_GHOST }}
+        API_KEY_PRISMIC: ${{ secrets.API_KEY_PRISMIC }}
+        REPOSITORY_NAME_GHOST: ${{ secrets.REPOSITORY_NAME_GHOST }}
+        REPOSITORY_NAME_PRISMIC: ${{ secrets.REPOSITORY_NAME_PRISMIC }}
+        STORAGE_ACCOUNT_KEY: ${{ secrets.STORAGE_ACCOUNT_KEY }}
+        STORAGE_ACCOUNT_NAME: ${{ secrets.STORAGE_ACCOUNT_NAME }}
