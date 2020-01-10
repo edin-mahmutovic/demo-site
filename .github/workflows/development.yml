@@ -23,4 +23,8 @@ jobs:
         run: npm run build
 
       - name: Upload site to Azure Storage
-        run: echo "Uploading site..."
+        uses: bacongobbler/azure-blob-storage-upload@v1.0.0
+        with:
+          source_dir: public
+          container_name: test
+          connection_string: ${{ secrets.AZURE_STORAGE }}
