@@ -24,8 +24,8 @@ jobs:
         env:
           REPOSITORY_NAME_GHOST: ${{ secrets.REPOSITORY_NAME_GHOST }}
           API_KEY_GHOST: ${{ secrets.API_KEY_GHOST }}
-          REPOSITORY_NAME_PRISMIC: ${{ secrets.obwebsite }}
-          API_KEY_PRISMIC: ${{ secrets.MC5YZ0RVRVJBQUFDUUE3NmlE.Yyrvv71-B37vv71p77-9Nu-_vVoTYjUSfu-_ve-_vRUw77-9LBbvv73vv73vv73vv73vv73vv71N77-9 }}
+          REPOSITORY_NAME_PRISMIC: ${{ secrets.REPOSITORY_NAME_PRISMIC }}
+          API_KEY_PRISMIC: ${{ secrets.API_KEY_PRISMIC }}
 
       - name: Upload site to Azure Storage
         uses: bacongobbler/azure-blob-storage-upload@v1.0.0
