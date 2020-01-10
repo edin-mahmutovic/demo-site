@@ -1,0 +1,30 @@
+.table-wrapper {
+  margin: 15px 0;
+
+  table {
+    margin: auto;
+    width: 100%;
+    tr {
+      display: flex;
+      align-items: center;
+      height: 40px;
+      padding: 0 3%;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f4f7f6;
+    }
+  }
+}
+.heading {
+  background-color: #f4f7f6;
+}
+
+.left {
+  width: 35%;
+  font-family: RobotoLight;
+}
+.right {
+  width: 65%;
+  font-family: RobotoLight;
+}

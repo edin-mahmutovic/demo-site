@@ -1,0 +1,38 @@
+.social {
+  display: flex;
+  flex-basis: 0;
+  flex: 1 1 0px;
+  flex-flow: column wrap;
+
+  p {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+
+  .links {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+
+  .link {
+    img {
+      height: 20px;
+      width: auto;
+      margin-right: 20px;
+      opacity: 0.4;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .social {
+    flex: unset;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}

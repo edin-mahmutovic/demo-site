@@ -1,97 +1,317 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's default starter
-</h1>
+# Gatsby Starter: Prismic i18n
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+A typography-heavy & light-themed Gatsby Starter which uses the Headless CMS [Prismic](https://prismic.io/).
+Based on [gatsby-starter-prismic](https://github.com/LekoArts/gatsby-starter-prismic) with Internationalization (i18n) support
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+[Demo Website](https://prismic-i18n.lekoarts.de)
 
-## 🚀 Quick start
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/LekoArts/gatsby-starter-prismic-i18n)
 
-1.  **Create a Gatsby site.**
+[![CircleCI](https://circleci.com/gh/LekoArts/gatsby-starter-prismic-i18n.svg?style=svg)](https://circleci.com/gh/LekoArts/gatsby-starter-prismic-i18n) [![Netlify Status](https://api.netlify.com/api/v1/badges/fc074687-c473-405f-9c6d-d5207bd6b87c/deploy-status)](https://app.netlify.com/sites/gatsby-starter-prismic-i18n/deploys)
 
-    Use the Gatsby CLI to create a new site, specifying the default starter.
+## About Me
 
-    ```shell
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
-    ```
+I hope you like my starters and create something awesome! To see some of my work you can visit my [website](https://www.lekoarts.de) or support me on [Patreon](https://www.patreon.com/lekoarts) to get some neat rewards (4K images, project files, tutorial insights). Every pledge on Patreon helps me creating more free starters!
 
-1.  **Start developing.**
+Also check out the other _gatsby-starters_:
 
-    Navigate into your new site’s directory and start it up.
+- [gatsby-starter-portfolio-emma](https://github.com/LekoArts/gatsby-starter-portfolio-emma)
+- [gatsby-starter-portfolio-emilia](https://github.com/LekoArts/gatsby-starter-portfolio-emilia)
+- [gatsby-starter-portfolio-jodie](https://github.com/LekoArts/gatsby-starter-portfolio-jodie)
+- [gatsby-starter-portfolio-bella](https://github.com/LekoArts/gatsby-starter-portfolio-bella)
+- [gatsby-starter-portfolio-cara](https://github.com/LekoArts/gatsby-starter-portfolio-cara)
+- [gatsby-starter-minimal-blog](https://github.com/LekoArts/gatsby-starter-minimal-blog)
+- [gatsby-starter-prismic](https://github.com/LekoArts/gatsby-starter-prismic)
 
-    ```shell
-    cd my-default-starter/
-    gatsby develop
-    ```
+Check out the [Gatsby Starter Portfolio Overview](https://gatsby-starter-portfolio.netlify.com/)!
 
-1.  **Open the source code and start editing!**
+## Features
 
-    Your site is now running at `http://localhost:8000`!
+Multiple features of Prismic are used in this starter:
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+- **Slices**: Enrich your blogposts with custom quotes, images or codeblocks. You can order them how you like. When you used the _Image-Slice_ the image will get inserted and optimized by **gatsby-image**
+- **Labels**: When marking a single word or a whole block with the given labels, Prism.js will transform these to syntax-highlighted codeblocks
+- **Relationship fields**: Categorize your blogposts in Categories via a relationship field. You can change categories on the fly
+- **Both custom types (Single / Repeatable)**: (Nearly) Every aspect of the website is managed with Prismic. The social media links or the recent projects get both managed in Prismic, no hardcoded entries!
+- **i18n**: Use the Internationalization/Localization features of Prismic!
 
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+Therefore the starter has following features:
 
-## 🧐 What's inside?
+- Prismic as Headless CMS
+- Emotion for styling
+- i18n
+- Cypress for End-to-End testing
+- PrismJS highlighting
+- Responsive images (gatsby-image)
+  - The right image size for every screen size
+  - Traced SVG Loading (Lazy-Loading)
+  - WebP Support
+- SEO
+  - Sitemap
+  - Schema.org JSONLD
+  - OpenGraph Tags
+  - Twitter Tags
+  - Favicons
+- Offline Support
+- WebApp Manifest Support
+- Typography.js
+- Configurable
+  - Use the `website.js` to easily change the most important information
+  - Themeable with `theme.js`
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+## Instructions
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
+### Quick start guide
 
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+The easiest way to deploy this starter is to use the same setup, meaning that your Prismic repository is configured the same way as this starter. The rest of this README aims to explain exactly that. You can read through the instructions with this high-level overview in mind:
 
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+1. Clone and install the starter
+1. Register an account on Prismic
+1. Configure your custom types
+1. Create an API key and store it in an ENV variable
+1. Add a second language to your Prismic repository
+1. Go to your content tab
+1. Create new documents for the `Homepage, Hero Links, Projects` type and fill out every input field
+1. Create at least one document for the `Category` type
+1. Create at least one document for the `Post` type. Every _Slice_ needs to be used at least one time and it needs to have one category assigned! _Note: You could for example create one post with every slice and one category in it._
+1. Your project is ready for development and production
 
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+### Custom setup
 
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
+Changes to your Prismic repository imply the need to change the React/GraphQL code of this starter, e.g. if you change the names (and therefore API IDs) of custom types or their input fields, you'll need to change the corresponding GraphQL queries.
 
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+#### Example: Use other slices
 
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
+Let's say you don't need to use the `Quote` slice. How would you get Gatsby to work without this slice?
 
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+In this case the `Quote` slice gets queried in the `src/templates/post.jsx` file:
 
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+```graphql
+... on PrismicPostBodyQuote {
+  slice_type
+  id
+  primary {
+    quote {
+      html
+      text
+    }
+  }
+}
+```
 
-9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
+Remove that bit from the query and Gatsby won't look for the Quote slice anymore (you also can remove the `src/slices/Quote.jsx` file). Vice versa you'd add a file in the `src/slices` directory, add it to `src/components/SliceZone.jsx`, and add it to the template query.
 
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
+## Install
 
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
+Check your development environment! You'll need [Node.js](https://nodejs.org/en/), the [Gatsby CLI](https://www.gatsbyjs.org/docs/) and [node-gyp](https://github.com/nodejs/node-gyp#installation) installed. The official Gatsby website also lists two articles regarding this topic:
 
-12. **`README.md`**: A text file containing useful reference information about your project.
+- [Gatsby on Windows](https://www.gatsbyjs.org/docs/gatsby-on-windows/)
+- [Check your development environment](https://www.gatsbyjs.org/tutorial/part-zero/)
 
-## 🎓 Learning Gatsby
+To copy and install this starter run this command (with "project-name" being the name of your folder you wish to install it in):
 
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
+```shell
+gatsby new project-name https://github.com/LekoArts/gatsby-starter-prismic-i18n
+cd project-name
+```
 
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
+## Setup
 
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
+You have to know the basics of Prismic's interface in order to be able to make the necessary changes / setup your project accordingly. You can also checkout the document ["Sourcing from Prismic"](https://www.gatsbyjs.org/docs/sourcing-from-prismic/) I wrote for the official Gatsby documentation.
 
-## 💫 Deploy
+### Custom types
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+To configure the exact same custom type as this starter, follow these steps:
 
-<!-- AUTO-GENERATED-CONTENT:END -->
+1. Go to your custom types tab
+2. Click the button "Create New" and choose "Repeatable Type". Give it the name `Post` (the API ID should be `post` automatically)
+3. On the right side you have a sidebar with **Build mode** and **JSON editor**. Open the **JSON editor** tab and insert the data from `.prismic/post.json`. Save your type
+
+Follow the second and third step (with the respective file from `.prismic`) for the following types:
+
+| Name       | API ID     | Type       |
+| ---------- | ---------- | ---------- |
+| Category   | category   | Repeatable |
+| Hero Links | hero_links | Single     |
+| Homepage   | homepage   | Single     |
+| Projects   | projects   | Single     |
+
+These are the exact same custom types I used for this starter.
+
+### i18n
+
+Go to your settings and click on `Translations & locales` to add a second locale.
+
+### gatsby-config
+
+#### repositoryName
+
+Don't forget to change the default `repositoryName` in the plugin's option. The `repositoryName` is the name you have entered at the creation of the repository (you’ll also find it as the subdomain in the URL)
+
+#### lang
+
+If you only have one language in your Prismic repository you should remove the `lang: 'en-gb'` option in the config. If you want to grab multiple languages, you can also remove this line.
+
+#### API key
+
+You need to define the API Key for your Prismic repository in `gatsby-config.js` ([Video tutorial](https://www.youtube.com/watch?v=iH0P4KcOeVc)). You can retrieve the key here:
+
+- You can generate an access token in the **API & Security** section of your repository settings. Setting a **Callback URL** is not necessary.
+- The token will be listed under "Permanent access tokens".
+
+It's best to store the API Key in an environment variable. Create the file `.env` in the root dir of your project. Its content should be:
+
+`API_KEY=OIJSOJIO-YOURKEYHERE-EAJNALÖKND`
+
+If you deploy to Netlify you can also setup an environment variable.
+
+More information on the source plugin: [gatsby-source-prismic](https://github.com/angeloashmore/gatsby-source-prismic)
+
+### Labels
+
+Prismic gives you the tool called **Label** in the Rich Text field. You can wrap single words or complete text blocks with a label (they will have a yellow background when labeled). Normally this is just a `<span>` with a name, but the `gatsby-config.js` converts these marked words/blocks into code blocks with PrismJS classnames (and therefore syntax highlighting 🎉).
+
+The two usecases:
+
+- You mark a single word / sentence and apply the `text` label: Inline code (single backtick in markdown)
+- You choose the `Preformatted` block (where can also choose the Headings) and apply any other (except `text`) label: Code block (three backticks in markdown)
+
+### Slices
+
+The `Post` custom types offers four slices in the slice zone:
+
+- **Code Block**: This slice automatically inserts a `Preformatted` field in which you can paste your code. Before inserting you should choose a **Label** for the correct syntax highlighting
+- **Quote**: A quote in a `blockquote`
+- **Text**: Your normal _Rich Text_ field
+- **Image**: This image won't be inlined with a Prismic URL, but downloaded and processed with `gatsby-image`
+
+## Development
+
+**Before running the local development server you'll need to add Content to your Prismic repository!**
+
+Go to your documents (`https://your-name.prismic.io/documents/`) and create content with the newly created types. Fill out the `Homepage`, `Hero Links`, and `Projects` single type. Create some categories and add at least one Post. This post needs to contain all available slices and at least one category. If you create multiple posts make sure that every slice gets used at least one time.
+
+**Please note**: You have to publish all these documents (not only saving them)!
+
+After that you can run the local server:
+
+```shell
+npm run develop
+```
+
+### Adding new features/plugins
+
+You can add other features by having a look at the official [plugins page](https://www.gatsbyjs.org/plugins/)
+
+### Building your site
+
+```shell
+npm run build
+```
+
+Copy the content of the `public` folder to your webhost or use a website like Netlify which automates that for you.
+
+## Configuration
+
+You can configure your setup in `config/website`:
+
+```JS
+module.exports = {
+  pathPrefix: '/', // Prefix for all links. If you deploy your site to example.com/portfolio your pathPrefix should be "portfolio"
+  title: 'Gatsby Starter - Prismic.io - i18n', // Navigation and Site Title
+  titleAlt: 'Gatsby Prismic.io', // Title for JSONLD
+  description: 'Based on gatsby-starter-prismic with Internationalization (i18n) support',
+  headline: 'Writing and publishing content for LekoArts', // Headline for schema.org JSONLD
+  url: 'https://prismic-i18n.lekoarts.de', // Domain of your site. No trailing slash!
+  logo: '/logos/logo-1024.png', // Used for SEO
+  ogLanguage: 'en_GB', // Facebook Language
+
+  // JSONLD / Manifest
+  favicon: 'src/favicon.png', // Used for manifest favicon generation
+  shortName: 'Prismic', // shortname for manifest. MUST be shorter than 12 characters
+  author: 'LekoArts', // Author for schemaORGJSONLD
+  themeColor: '#3D63AE',
+  backgroundColor: '#EBEDF2',
+
+  twitter: '@starter_prismicio-i18n', // Twitter Username
+  facebook: 'gatsby-prismic-i18n', // Facebook Site Name
+  googleAnalyticsID: 'UA-XXXXXX-X',
+
+  skipNavId: 'reach-skip-nav', // ID for the "Skip to content" a11y feature
+}
+```
+
+You can also change the colors, container widths and other stuff in `src/styles/theme`:
+
+```JS
+const theme = {
+  colors: {
+    primary: '#3D63AE',
+    bg: '#fff',
+    black: '#000',
+    greyLight: '#EBEDF2',
+    greyBlue: '#a2bce2',
+    grey: '#595C62',
+    greyDark: '#303643',
+    greyDarker: '#1c252b',
+  },
+  maxWidth: '1000px',
+  maxWidthText: '720px',
+  breakpoints: {
+    xs: '400px',
+    s: '600px',
+    m: '900px',
+    l: '1200px',
+  },
+}
+
+export default theme
+```
+
+The configuration for i18n can be found in `config/i18n`:
+
+```JS
+module.exports = {
+  'de-de': {
+    default: true,
+    path: 'de',
+    locale: 'de-de',
+    siteLanguage: 'de',
+    ogLang: 'de_DE',
+    defaultTitle: website.title,
+    defaultTitleAlt: website.titleAlt,
+    defaultDescription: 'Basierend auf gatsby-starter-prismic mit Unterstützung für Lokalisierung (i18n)',
+    headline: 'Schreiben und Veröffentlichen für LekoArts',
+    category: 'Kategorie',
+    categories: 'Kategorien',
+    was: 'wurde',
+    were: 'wurden',
+    tagged: 'markiert mit',
+    recent: 'Neue',
+    projects: 'Projekte',
+    allCategories: 'Alle Kategorien',
+    entries: 'Einträge',
+  },
+  'en-gb': {
+    path: 'en',
+    locale: 'en-gb',
+    siteLanguage: 'en',
+    ogLang: 'en_GB',
+    defaultTitle: website.title,
+    defaultTitleAlt: website.titleAlt,
+    defaultDescription: website.description,
+    headline: website.headline,
+    category: 'Category',
+    categories: 'Categories',
+    was: 'was',
+    were: 'were',
+    tagged: 'tagged with',
+    recent: 'Recent',
+    projects: 'projects',
+    allCategories: 'All categories',
+    entries: 'entries',
+  },
+}
+```
+
+**Attention:** You also need to edit `static/robots.txt` to include your domain!

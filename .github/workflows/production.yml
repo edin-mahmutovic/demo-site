@@ -21,6 +21,11 @@ jobs:
 
       - name: Build site
         run: npm run build
+        env:
+          REPOSITORY_NAME_GHOST: ${{ secrets.REPOSITORY_NAME_GHOST }}
+          API_KEY_GHOST: ${{ secrets.API_KEY_GHOST }}
+          REPOSITORY_NAME_PRISMIC: ${{ secrets.obwebsite }}
+          API_KEY_PRISMIC: ${{ secrets.MC5YZ0RVRVJBQUFDUUE3NmlE.Yyrvv71-B37vv71p77-9Nu-_vVoTYjUSfu-_ve-_vRUw77-9LBbvv73vv73vv73vv73vv73vv71N77-9 }}
 
       - name: Upload site to S3 bucket
         uses: jakejarvis/s3-sync-action@master

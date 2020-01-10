@@ -1,0 +1,124 @@
+:global {
+  .active_tab {
+    background-color: #f4f8ff;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: column wrap;
+
+  .promo {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    padding: 16px 0;
+    background-color: #e6edfb;
+  }
+  .sticker {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2d4ad0;
+    border-radius: 20px;
+    width: auto;
+    color: #fff;
+    padding: 5px 15px;
+    margin: 0 10px;
+    font-family: RobotoLight;
+    font-size: 14px;
+  }
+  .message {
+    padding: 5px;
+    color: #070e20;
+    margin: 0 10px;
+    font-family: Roboto;
+  }
+
+  .link {
+    padding: 5px 0;
+    margin: 0 10px 0 15px;
+    text-decoration: none;
+    color: #070e20;
+    border-bottom: 1px solid #070e20;
+    font-weight: 600;
+    font-family: Roboto;
+  }
+  .tabs {
+    display: flex;
+    // padding: 0 5%;
+    flex-flow: row nowrap;
+    border-collapse: collapse;
+    // max-width: 1080px;
+    margin: 0 auto;
+
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+    
+    .tab {
+      width: 25%;
+      padding: 50px 25px;
+      user-select: none;
+      border: 1px solid #dae3ec;
+      border-top: none;
+      display: flex;
+
+      img {
+        height: 60px;
+        width: auto;
+        margin-right: 15px;
+      }
+
+      &:hover {
+        background-color: #f4f8ff;
+        // color: #fff;
+        cursor: pointer;
+      }
+
+      &:not(:last-child) {
+        border-right: none;
+      }
+
+      .title {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        font-family: Futura;
+      }
+
+      .text * {
+        font-family: RobotoLight;
+        line-height: 20px;
+      }
+    }
+  }
+
+}
+
+@media (max-width: 1024px) {
+  .wrapper {
+    .tabs {
+
+      flex-flow: row wrap;
+      .tab {
+        width: 50%;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    .tabs {
+      .tab {
+        width: 100%;
+
+        &:not(:last-child) {
+          border: 1px solid #dae3ec;
+        }
+      }
+    }
+  }
+}

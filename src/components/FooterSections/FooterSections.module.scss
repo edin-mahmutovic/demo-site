@@ -1,0 +1,36 @@
+.links {
+  display: flex;
+  flex-basis: 0;
+  flex: 1 1 0px;
+  flex-flow: column wrap;
+  padding-left: 20px;
+
+  p {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 20px;
+    font-family: Futura;
+  }
+
+  a {
+    text-decoration: none;
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-family: RobotoLight;
+    letter-spacing: 0.5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .links {
+    width: 100%;
+    flex: unset;
+    padding-left: 0;
+    margin-bottom: 30px;
+
+    a {
+      margin-right: auto;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.hamburger {
+  &_link {
+    width: 100%;
+    padding: 15px;
+    text-decoration: none;
+    color: #99a9b5;
+    text-transform: uppercase;
+    text-align: left;
+    font-family: RobotoLight;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #494c64;
+    }
+
+    img {
+      max-height: 15px;
+      margin-right: 5px;
+    }
+  }
+}

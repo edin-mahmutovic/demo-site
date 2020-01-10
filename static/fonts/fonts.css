@@ -1,0 +1,17 @@
+@font-face {
+    font-family: Futura;
+    src: url('futura\ medium\ bt.ttf');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url('Roboto-Medium.ttf');
+    font-style: normal;
+} 
+
+@font-face {
+    font-family: RobotoLight;
+    src: url('Roboto-Light.ttf');
+    font-style: normal;
+} 

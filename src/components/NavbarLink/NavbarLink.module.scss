@@ -1,0 +1,19 @@
+.link {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 0 10px;
+  text-decoration: none;
+  color: #c4c4c4;
+  text-align: center;
+  font-family: RobotoLight;
+
+  &:hover {
+    color: #fff;
+  }
+  img {
+    max-height: 15px;
+  }
+}

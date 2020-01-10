@@ -1,0 +1,20 @@
+.image {
+  width: 100%;
+  font-family: Roboto;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  div {
+    width: 100%;
+  }
+  img {
+    width: 400px;
+    height: auto;
+  }
+  strong {
+    font-weight: bold;
+  }
+  em {
+    font-style: italic;
+  }
+}

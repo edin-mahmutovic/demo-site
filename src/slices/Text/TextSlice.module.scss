@@ -1,0 +1,43 @@
+.text {
+  width: 100%;
+  * {
+    font-family: RobotoLight;
+  }
+
+  p {
+    margin-bottom: 6pt;
+    line-height: 20px;
+    text-align: justify;
+  }
+  strong {
+    font-weight: bold;
+  }
+  ol {
+    margin-left: 15px;
+    margin-bottom: 12pt;
+
+    li {
+      list-style: decimal;
+      margin-left: 25px;
+      line-height: 20px;
+      text-align: justify;
+      padding-left: 10px;
+    }
+  }
+
+  h3 {
+    margin-bottom: 12pt;
+    margin-top: 18px;
+    font-size: 18px;
+    line-height: 18px;
+    font-family: Futura;
+    font-weight: bold;
+
+    * {
+      font-family: Futura;
+    }
+  }
+  em {
+    font-style: italic;
+  }
+}

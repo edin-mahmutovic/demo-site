@@ -1,0 +1,22 @@
+.wrapper {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #57b5ff;
+  width: fit-content;
+  font-family: 'Roboto';
+  line-height: 36px;
+  img {
+    height: 20px;
+    width: 20px;
+  }
+  a {
+    text-decoration: none;
+    color: #57b5ff;
+    font-weight: bold;
+
+    span {
+      padding-left: 10px;
+    }
+  }
+}

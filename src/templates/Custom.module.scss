@@ -1,0 +1,46 @@
+.wrapper {
+  // background-color: yellow;
+}
+
+.columnWrapper {
+  display: flex;
+  max-width: 1080px;
+  margin: 0 auto;
+  flex-flow: row wrap;
+}
+
+.leftColumn {
+  // background-color: red;
+  padding: 40px 10px;
+  width: auto;
+  min-width: 150px;
+  flex: 1;
+
+  &Empty {
+    display: none;
+  }
+}
+
+.centerColumn {
+  // background-color: blue;
+  min-width: 680px;
+  padding: 40px 20px;
+  flex: 2;
+}
+
+.rightColumn {
+  // background-color: green;
+  padding: 40px 10px;
+  flex: 1;
+  min-width: 150px;
+
+  &Empty {
+    display: none;
+  }
+}
+
+@media (max-width: 680px) {
+  .centerColumn {
+    min-width: 100%;
+  }
+}

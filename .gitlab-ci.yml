@@ -1,0 +1,14 @@
+stages:
+  - build
+  
+build:
+  stage: build
+  environment:
+    name: dev
+    url: https://overbitsitestorage.z16.web.core.windows.net/en/
+  only:
+    - develop
+  script:
+    - npm install
+    - gatsby build
+    - az storage blob upload-batch -d '$web' -s public/ --account-name $STORAGE_ACCOUNT_NAME --account-key $STORAGE_ACCOUNT_KEY

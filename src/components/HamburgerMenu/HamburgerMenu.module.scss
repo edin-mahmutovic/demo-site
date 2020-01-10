@@ -1,0 +1,227 @@
+:global {
+  div.hamburgerMenuShown {
+    opacity: 1;
+    pointer-events: all;
+
+  }
+  a.hamburgerMenuShown {
+    position: fixed;
+    z-index: 1000;
+  }
+
+  div.hamburgerMenuHidden {
+    right: -2000px !important;
+    pointer-events: none;
+    transform: scaleX(0);
+  }
+}
+
+.hamburgerMenu {
+  display: flex;
+  transition: all 1s;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+
+  // > a {
+  //   position: fixed;
+  //   z-index: 1000;
+  // }
+
+  &Line {
+    width: 30px;
+    height: 4px;
+    background-color: #fff;
+    margin-bottom: 5px;
+    position: relative;
+    top: 3px;
+
+    &__first {
+
+      &_close {
+        position: relative;
+        transform: rotate(45deg);
+        top: 9px;
+      }
+    }
+    &__second {
+
+      &_close {
+        position: relative;
+        transform: rotate(-45deg);
+        top: 0px;
+      }
+    }
+  }
+
+  &Trigger {
+    margin-left: auto;
+  }
+
+  &Close {
+    position: absolute;
+    right: 25px;
+    top: 22px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.hamburgerList {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  right: 0;
+  top: 0;
+  padding: 70px 25px 0 25px;
+  display: flex;
+  flex-flow: row wrap;
+  background-color: #081a48;
+  transition: all .3s;
+  z-index: 100;
+}
+
+.list {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  > a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 0;
+    font-size: 24px;
+    font-family: Futura;
+  }
+
+  > * {
+    width: 100%;
+  }
+
+.switcher {
+  display: flex;
+  flex-flow: column nowrap;
+  position: relative;
+  color: #fff;
+  // padding: 0 50px;
+  height: 37px;
+  overflow: hidden;
+
+  &.show_lang {
+    overflow: visible;
+    height: auto;
+  }
+
+  &.hide_lang {
+    height: 37px;
+    overflow: hidden;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 0; 
+    height: 0; 
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #fff;
+    font-size: 0;
+    line-height: 0;
+    right: 0;
+    top: 18px;
+    
+  }
+
+  
+  .language {
+    padding: 10px 0;
+
+    a {
+      font-family: Futura;
+      font-size: 24px;
+    }
+    order: 1;
+
+    &_active {
+      order: 0;
+    }
+  }
+
+  img {
+    margin-right: 10px;
+    position: relative;
+    top: -3px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
+}
+}
+
+.links {
+
+  .label {
+    position: relative;
+    font-family: Futura;
+    font-size: 24px;
+    color: #fff;
+    // padding: 10px 0;
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 0; 
+      height: 0; 
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-top: 8px solid #fff;
+      font-size: 0;
+      line-height: 0;
+      right: 0;
+      top: 8px;
+    }
+  }
+  
+  .dropdown {
+    font-family: Futura;
+    font-size: 24px;
+    color: #fff;
+    padding: 10px 0;
+    position: relative;
+
+    a {
+      text-decoration: none;
+      color: #fff;
+      padding: 10px 10px;
+      font-size: 20px;
+      font-family: Futura;
+    }
+
+
+
+    &_list {
+      display: flex;
+      flex-flow: column nowrap;
+      margin-top: 10px;
+    }
+
+    .show {
+      display: flex;
+    }
+
+    .hide {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 1140px) {
+  .hamburgerMenu { 
+    display: none;
+  }
+}

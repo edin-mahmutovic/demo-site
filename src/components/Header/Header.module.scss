@@ -1,0 +1,31 @@
+.wrapper {
+  background-color: #081a48;
+  //temporary for demonstartion
+  background-image: url(https://images.prismic.io/abc-techgroup/07420bf0-fc05-425e-a5c5-96d2bd27ca00_Overbit_BG3.png);
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  background: #081a48;
+  background: -webkit-linear-gradient(180deg, rgba(51, 103, 204, 0), #8b009fc2);
+  background: -moz-linear-gradient(180deg, rgba(51, 103, 204, 0), #8b009fc2);
+  background: linear-gradient(180deg, rgba(51, 103, 204, 0), #8b009fc2);
+  h1 {
+    color: #fff;
+    font-size: 3rem;
+  }
+
+  @media (max-width: 1024px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+  }
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 2rem;
+    }
+  }
+}
